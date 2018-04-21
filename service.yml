@@ -27,5 +27,11 @@ app:
   routes:
     GET /:
       - indexController.hello
+    POST /action:
+      - indexController.executeCommand
 
 main: main
+
+config:
+  gpioList:
+    - 7

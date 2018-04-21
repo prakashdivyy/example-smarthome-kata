@@ -1,3 +1,3 @@
 export interface IGpioManager {
-    process(index: number, bool: boolean): void;
+    process(index: number, bool: boolean): Promise<boolean>;
 }
