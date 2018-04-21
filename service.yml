@@ -1,0 +1,31 @@
+schema: kata.ai/schema/merapi/1.0
+
+name: ${package.name}
+version: ${package.version}
+
+plugins:
+  - express
+
+components:
+  
+  # main
+  main: Main
+
+  # controllers
+  indexController: controllers/IndexController
+
+  # managers
+  gpioManager: managers/GpioManager
+
+  # express
+  app:
+    type: express
+
+app:
+  host: 0.0.0.0
+  port: ${$PORT}
+  routes:
+    GET /:
+      - indexController.hello
+
+main: main
